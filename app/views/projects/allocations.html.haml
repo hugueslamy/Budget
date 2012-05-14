@@ -1,0 +1,15 @@
+%h2 Allocations
+
+%table#allocations
+	%th
+	%th Date
+	%th Account
+	%th Amount
+	%th Notes
+	- @project.allocations.each do |allocation|
+		%tr
+			%td= link_to "Edit", edit_project_account_allocation_path( @project, allocation.account, allocation )	
+			%td= allocation.effective_date
+			%td= allocation.account.name
+			%td= number_to_currency( allocation.value )
+			%td= allocation.note 

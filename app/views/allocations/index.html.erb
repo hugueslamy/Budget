@@ -1,0 +1,29 @@
+<h1>Listing allocations</h1>
+
+<table>
+  <tr>
+    <th>Value</th>
+    <th>Effective date</th>
+    <th>Note</th>
+    <th>Account</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @allocations.each do |allocation| %>
+  <tr>
+    <td><%= allocation.value %></td>
+    <td><%= allocation.effective_date %></td>
+    <td><%= allocation.note %></td>
+    <td><%= allocation.account_id %></td>
+    <td><%= link_to 'Show', allocation %></td>
+    <td><%= link_to 'Edit', edit_allocation_path(allocation) %></td>
+    <td><%= link_to 'Destroy', allocation, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Allocation', new_allocation_path %>

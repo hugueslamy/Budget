@@ -1,0 +1,15 @@
+%h2 Expenses
+
+%table#expenses
+	%th
+	%th Date
+	%th Paid to
+	%th Account
+	%th Amount
+	- @project.expenses.each do |expense|
+		%tr
+			%td= link_to "Edit", edit_project_account_expense_path( @project, expense.account, expense )	
+			%td= expense.effective_date
+			%td
+			%td= expense.account.name
+			%td= number_to_currency( expense.value )

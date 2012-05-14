@@ -1,0 +1,74 @@
+%p#notice= notice
+
+%div.page-header
+	%h1= @account.name
+	%p
+		= link_to 'Edit', edit_project_account_path( @account.project, @account ) |
+	
+%h2 Allocations
+%span
+	= link_to "New", new_project_account_allocation_path( @account.project, @account )
+%table
+	%tr
+		%th 
+		%th Date
+		%th Value
+		%th Note
+		%th Actions
+	- @account.allocations.each do |allocation|
+		%tr
+			%td
+				= link_to edit_project_account_allocation_path( @account.project, @account, allocation ), :class => 'btn  btn-action btn-mini' do
+					%i.icon-cog
+					Edit
+			%td= allocation.effective_date
+			%td= number_to_currency( allocation.value )
+			%td= allocation.note
+			%td
+				= link_to project_account_allocation_path( @account.project, @account, allocation ), confirm: 'Are you sure?', method: :delete, :class => 'btn  btn-danger btn-mini' do
+					%i.icon-trash
+					Delete
+	%tr
+		%th Total
+		%th
+		%th= number_to_currency( @account.allocations.sum(:value) )
+		%th
+		%th
+		
+%h2 Expenses
+%span
+	= link_to "New", new_project_account_expense_path( @account.project, @account )
+%table
+	%tr
+		%th 
+		%th Date
+		%th Value
+		%th Accrue?
+		%th Actions
+	- @account.expenses.each do |expense|
+		%tr
+			%td
+				= link_to edit_project_account_expense_path( @account.project, @account, expense ), :class => 'btn  btn-action btn-mini' do
+					%i.icon-cog
+					Edit
+			%td= expense.effective_date
+			%td= number_to_currency( expense.value )
+			%td
+				%div{:class => [expense.accrue? ? 'icon-ok' : 'icon-remove']}
+			%td
+				= link_to(project_account_expense_path( @account.project, @account, expense ), :confirm => 'Are you sure?', :method => :delete, :class => 'btn  btn-danger btn-mini') do
+					%i.icon-trash
+					Delete
+				
+	%tr
+		%th Total
+		%th
+		%th= number_to_currency( @account.expenses.sum(:value) )
+		%th
+		%th
+	
+= render( :partial => 'progression_graph', :locals =>{ :account => @account })
+
+= link_to project_path( @account.project ), :class => 'btn btn-large' do
+	%i.icon-arrow-left
+	Back

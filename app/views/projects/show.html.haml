@@ -1,0 +1,51 @@
+%p#notice= notice
+
+%h2
+	= link_to @project.name, project_path(@project)
+%p
+	%b From:
+	=@project.start_date
+	%b To: 
+	=@project.end_date
+
+%div.btn-group
+	%a.btn.dropdown-toggle{"data-toggle" => 'dropdown', :href => '#'}
+		Actions
+		%span.caret
+	%ul.dropdown-menu
+		%li= link_to 'Create account', new_project_account_path( @project )
+		%li= link_to "View all allocations", allocations_project_path( @project )
+		%li= link_to "View all expenses", expenses_project_path( @project )
+	
+%h3 Accounts
+%table#accounts.table.table-bordered
+	%tr
+		%th Account
+		%th Budgeted
+		%th Spent
+		%th Projected
+		%th Ratio
+		%th Actions
+	- @project.accounts.each do |account|
+		%tr
+			%th= link_to account.name, project_account_path( @project, account )
+			%td= number_to_currency(account.allocations.sum(:value))
+			%td= number_to_currency(account.expenses.spent.sum(:value))
+			%td= number_to_currency(account.expenses.projected.sum(:value))
+			%td= number_to_percentage( account.allocations.sum(:value) == 0 ?  0 : account.expenses.sum(:value) / account.allocations.sum(:value) * 100, :precision => 1 )
+			%td
+				= link_to "Add allocation", new_project_account_allocation_path( @project, account )
+				%br/
+				= link_to "Record expense", new_project_account_expense_path( @project, account )
+	%tr
+		%th Total
+		%th= number_to_currency(@project.allocations.sum(:value))
+		%th= number_to_currency(@project.expenses.spent.sum(:value))
+		%th= number_to_currency(@project.expenses.projected.sum(:value))
+		%th= number_to_percentage( @project.allocations.sum(:value) == 0 ?  0 : @project.expenses.sum(:value) / @project.allocations.sum(:value) * 100, :precision => 1 )
+		%th
+			
+
+%h3 Graphs
+= render( :partial => 'project_graph',  :locals =>{ :project => @project } )
+= render( :partial => 'progression_graph', :locals =>{ :project => @project })

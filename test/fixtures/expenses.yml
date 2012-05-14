@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  value: 9.99
+  effective_date: 2012-05-01
+
+two:
+  value: 9.99
+  effective_date: 2012-05-01

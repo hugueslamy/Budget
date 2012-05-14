@@ -1,0 +1,18 @@
+// Place all the styles related to the projects controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+table {
+	th {
+		background-color: LightGray;
+		padding: 3px;
+	}
+	td {
+		padding: 3px;
+		border: solid black 1px;
+	}
+}
+
+.graph_title {
+	vertical-align: top;
+}
