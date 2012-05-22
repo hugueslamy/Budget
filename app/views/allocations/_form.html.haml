@@ -1,0 +1,19 @@
+= semantic_form_for([@account.project, @account, @allocation]) do |f| 
+	- if @allocation.errors.any? 
+		%div#error_explanation
+			%h2
+				= pluralize(@allocation.errors.count, "error")
+				prohibited this allocation from being saved:
+
+			%ul
+			- @allocation.errors.full_messages.each do |msg|
+				%li= msg 
+
+	.field
+		= f.inputs do
+			= f.input :value
+			= f.input :effective_date, :as => :date_picker
+			= f.input :note
+  
+		= f.actions do
+			= f.action :submit, :as => :button

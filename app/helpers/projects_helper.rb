@@ -6,6 +6,7 @@ module ProjectsHelper
 		fields = project.accounts.map { |account| account.name }
 		data = project.accounts.map { |account| account.allocations.sum(:value) }
 		graph = SVG::Graph::Pie.new({ :height => 250, :width => 300, :fields => fields})
+		graph.style_sheet = '/assets/graph.css'
 		graph.add_data({ :data => data, :title => 'Allocation per accounts' })
 		
 		graph.burn()
@@ -15,6 +16,7 @@ module ProjectsHelper
 		fields = project.accounts.map { |account| account.name }
 		data = project.accounts.map { |account| account.expenses.sum(:value) }
 		graph = SVG::Graph::Pie.new({ :height => 250, :width => 300, :fields => fields})
+		graph.style_sheet = '/assets/graph.css'
 		graph.add_data({ :data => data, :title => 'Expenses per accounts' })
 		
 		graph.burn()
@@ -41,6 +43,7 @@ module ProjectsHelper
 		graph.rotate_x_labels = true
 		graph.scale_integers = true
 		graph.show_data_values = false
+		graph.style_sheet = '/assets/graph.css'
 		
 		graph.burn()
 	end
@@ -67,6 +70,7 @@ module ProjectsHelper
 		graph.rotate_x_labels = true
 		graph.scale_integers = true
 		graph.show_data_values = false
+		graph.style_sheet = '/assets/graph.css'
 		
 		graph.burn()
 	end

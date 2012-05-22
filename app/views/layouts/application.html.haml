@@ -4,6 +4,7 @@
 		%title Budget
 		= stylesheet_link_tag "application", :media => "all"
 		= javascript_include_tag "application"
+		= javascript_include_tag "https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"
 		= csrf_meta_tags
 	%body
 		%div.container
@@ -17,5 +18,12 @@
 									%li
 										%a{:href => '/projects', :title => 'Projects List'}
 											Home
+									%li.dropdown
+										%a.dropdown-toggle{:href => '#', :title => 'Projects', "data-toggle" => 'dropdown'} 
+											Projects
+											%span.caret
+										%ul.dropdown-menu
+											- Project.all.each do |project|
+												%li= link_to project.name, project_path( project )
 			= yield
 			%footer

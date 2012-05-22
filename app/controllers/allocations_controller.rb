@@ -47,7 +47,7 @@ class AllocationsController < ApplicationController
 
     respond_to do |format|
       if @allocation.save
-        format.html { redirect_to project_path(@allocation.account.project), notice: 'Allocation was successfully created.' }
+        format.html { redirect_to project_account_path(@allocation.account.project, @allocation.account), notice: 'Allocation was successfully created.' }
         format.json { render json: @allocation, status: :created, location: @allocation }
       else
         format.html { render action: "new" }
@@ -63,7 +63,7 @@ class AllocationsController < ApplicationController
 
     respond_to do |format|
       if @allocation.update_attributes(params[:allocation])
-        format.html { redirect_to  allocations_project_path( @allocation.account.project ), notice: 'Allocation was successfully updated.' }
+        format.html { redirect_to  project_account_path(@allocation.account.project, @allocation.account), notice: 'Allocation was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
