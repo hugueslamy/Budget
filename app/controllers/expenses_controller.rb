@@ -25,7 +25,7 @@ class ExpensesController < ApplicationController
   # GET /expenses/new.json
   def new
     @expense = Expense.new
-		@account = Account.find params[:account_id]
+		@expense.account = Account.find(params[:account_id])
 
     respond_to do |format|
       format.html # new.html.erb
@@ -42,7 +42,6 @@ class ExpensesController < ApplicationController
   # POST /expenses.json
   def create
     @expense = Expense.new(params[:expense])
-		@expense.account = Account.find( params[:account_id] )
 
     respond_to do |format|
       if @expense.save
@@ -62,7 +61,7 @@ class ExpensesController < ApplicationController
 
     respond_to do |format|
       if @expense.update_attributes(params[:expense])
-        format.html { redirect_to @expense, notice: 'Expense was successfully updated.' }
+        format.html { redirect_to account_path( @expense.account ), notice: 'Expense was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

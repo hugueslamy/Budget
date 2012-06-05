@@ -1,4 +1,4 @@
-= semantic_form_for([@account.project, @account, @expense]) do |f|
+= semantic_form_for @expense, :html => {:class => 'form-horizontal unstyled'} do |f|
 	- if @expense.errors.any?
 		#error_explanation
 			%h2 #{pluralize(@expense.errors.count, "error")} prohibited this expense from being saved:
@@ -9,6 +9,9 @@
 
 	.field
 		= f.inputs do
+			= f.input :account, :collection => @expense.account.project.accounts
+			= f.input :supplier			
+			= f.input :title
 			= f.input :value
 			= f.input :effective_date, :as => :string
 			= f.input :accrue

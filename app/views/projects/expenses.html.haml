@@ -1,15 +1,32 @@
+%h1= @project.name
 %h2 Expenses
 
-%table#expenses
+%table#expenses.table
 	%th
 	%th Date
 	%th Paid to
+	%th Summary
 	%th Account
 	%th Amount
+	%th
 	- @project.expenses.each do |expense|
 		%tr
-			%td= link_to "Edit", edit_project_account_expense_path( @project, expense.account, expense )	
-			%td= expense.effective_date
 			%td
+				= link_to edit_expense_path( expense ), :class => 'btn btn-mini' do
+					Edit
+					%i.icon-cog
+			%td= expense.effective_date
+			%td= expense.try( :supplier ).try( :name )
+			%td= truncate( expense.title )
 			%td= expense.account.name
-			%td= number_to_currency( expense.value )
+			%td.currency
+				= number_to_currency( expense.value )
+				%div{:class => [expense.accrue? ? 'icon-ok' : 'icon-remove']}
+			%td
+				= link_to expense_path( expense ), :confirm => 'Are you sure?', :method => :delete, :class => 'btn  btn-danger btn-mini' do
+					Delete
+					%i.icon-trash
+					
+= link_to project_path( @project ), :class => 'btn btn-mini' do
+	%i.icon-arrow-left
+	Back

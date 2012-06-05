@@ -1,12 +1,13 @@
 Budget::Application.routes.draw do
+  resources :suppliers
+	resources :accounts
+	resources :allocations
+	resources :expenses
+
   resources :projects do
 		member do
 			get 'allocations'
 			get 'expenses'
-		end
-		resources :accounts do
-			resources :allocations
-			resources :expenses
 		end
   end
 

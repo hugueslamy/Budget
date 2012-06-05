@@ -1,15 +1,35 @@
+%h1= @project.name
 %h2 Allocations
 
-%table#allocations
+%table#allocations.table
 	%th
 	%th Date
 	%th Account
 	%th Amount
-	%th Notes
-	- @project.allocations.each do |allocation|
+	%th Summary
+	%th
+	- @project.allocations.order("effective_date asc").each do |allocation|
 		%tr
-			%td= link_to "Edit", edit_project_account_allocation_path( @project, allocation.account, allocation )	
+			%td
+				= link_to edit_allocation_path( allocation ), :class => 'btn btn-mini' do
+					Edit
+					%i.icon-cog
 			%td= allocation.effective_date
 			%td= allocation.account.name
-			%td= number_to_currency( allocation.value )
-			%td= allocation.note 
+			%td.currency= number_to_currency( allocation.value )
+			%td= truncate( allocation.title )
+			%td
+				=link_to allocation_path( allocation ), :confirm => 'Are you sure?', :method => :delete, :class => 'btn  btn-danger btn-mini' do
+					Delete
+					%i.icon-trash
+	%tr
+		%th Total
+		%th
+		%th
+		%th.currency= number_to_currency(@project.allocations.sum(:value))
+		%th
+		%th
+		
+= link_to project_path( @project ), :class => 'btn btn-mini' do
+	%i.icon-arrow-left
+	Back

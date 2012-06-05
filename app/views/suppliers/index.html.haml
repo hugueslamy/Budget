@@ -1,0 +1,23 @@
+%h1 Listing suppliers
+
+%table
+	%tr
+		%th 
+		%th Name
+		%th 
+
+	- @suppliers.each do |supplier|
+		%tr
+			%td
+				= link_to edit_supplier_path(supplier), :class => 'btn  btn-action btn-mini' do
+					Edit
+					%i.icon-cog
+			%td= link_to supplier.name, supplier
+			%td
+				= link_to supplier, confirm: 'Are you sure?', method: :delete, :class => 'btn  btn-danger btn-mini' do
+					Destroy
+					%i.icon-trash
+
+%br/
+
+= link_to 'New Supplier', new_supplier_path

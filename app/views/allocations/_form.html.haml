@@ -1,4 +1,4 @@
-= semantic_form_for([@account.project, @account, @allocation]) do |f| 
+= semantic_form_for @allocation, :html => {:class => 'form-horizontal'}  do |f| 
 	- if @allocation.errors.any? 
 		%div#error_explanation
 			%h2
@@ -11,9 +11,11 @@
 
 	.field
 		= f.inputs do
+			= f.input :account, :as => :select
+			= f.input :title
 			= f.input :value
-			= f.input :effective_date, :as => :date_picker
-			= f.input :note
+			= f.input :effective_date, :as => :string
+			= f.input :note, :input_html => {:class => 'autogrow', :rows => 5, :cols => 40}
   
 		= f.actions do
 			= f.action :submit, :as => :button

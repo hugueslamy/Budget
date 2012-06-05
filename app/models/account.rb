@@ -4,4 +4,6 @@ class Account < ActiveRecord::Base
   belongs_to :project
   has_many :allocations
 	has_many :expenses
+	
+	validates_associated :project
 end

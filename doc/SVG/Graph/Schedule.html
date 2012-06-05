@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=CP850" http-equiv="Content-Type">
+
+<title>class SVG::Graph::Schedule - RDoc Documentation</title>
+
+<link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../index.html">Home</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/SVG/Graph/Schedule.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link"><a href="Graph.html">SVG::Graph::Graph</a>
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-add_data">#add_data</a>
+    
+    <li><a href="#method-i-draw_data">#draw_data</a>
+    
+    <li><a href="#method-i-format">#format</a>
+    
+    <li><a href="#method-i-get_css">#get_css</a>
+    
+    <li><a href="#method-i-get_x_labels">#get_x_labels</a>
+    
+    <li><a href="#method-i-get_y_labels">#get_y_labels</a>
+    
+    <li><a href="#method-i-min_x_value-3D">#min_x_value=</a>
+    
+    <li><a href="#method-i-set_defaults">#set_defaults</a>
+    
+    <li><a href="#method-i-y_label_offset">#y_label_offset</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../../Gemfile.html">Gemfile</a>
+  
+    <li class="file"><a href="../../README_rdoc.html">README</a>
+  
+    <li class="file"><a href="../../Rakefile.html">Rakefile</a>
+  
+    <li class="file"><a href="../../doc/README_FOR_APP.html">README_FOR_APP</a>
+  
+    <li class="file"><a href="../../lib/SVG/GPL_txt.html">GPL</a>
+  
+    <li class="file"><a href="../../lib/SVG/LICENSE_txt.html">LICENSE</a>
+  
+    <li class="file"><a href="../../proj_tree.html">proj_tree</a>
+  
+    <li class="file"><a href="../../public/robots_txt.html">robots</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../SVG.html">SVG</a>
+  
+    <li><a href="../../SVG/Graph.html">SVG::Graph</a>
+  
+    <li><a href="../../SVG/Graph/Bar.html">SVG::Graph::Bar</a>
+  
+    <li><a href="../../SVG/Graph/BarBase.html">SVG::Graph::BarBase</a>
+  
+    <li><a href="../../SVG/Graph/BarHorizontal.html">SVG::Graph::BarHorizontal</a>
+  
+    <li><a href="../../SVG/Graph/Graph.html">SVG::Graph::Graph</a>
+  
+    <li><a href="../../SVG/Graph/Line.html">SVG::Graph::Line</a>
+  
+    <li><a href="../../SVG/Graph/Pie.html">SVG::Graph::Pie</a>
+  
+    <li><a href="../../SVG/Graph/Plot.html">SVG::Graph::Plot</a>
+  
+    <li><a href="../../SVG/Graph/Schedule.html">SVG::Graph::Schedule</a>
+  
+    <li><a href="../../SVG/Graph/TimeSeries.html">SVG::Graph::TimeSeries</a>
+  
+    <li><a href="../../ActiveSupport.html">ActiveSupport</a>
+  
+    <li><a href="../../ActiveSupport/TestCase.html">ActiveSupport::TestCase</a>
+  
+    <li><a href="../../Budget.html">Budget</a>
+  
+    <li><a href="../../Budget/Application.html">Budget::Application</a>
+  
+    <li><a href="../../Account.html">Account</a>
+  
+    <li><a href="../../AccountTest.html">AccountTest</a>
+  
+    <li><a href="../../AccountsController.html">AccountsController</a>
+  
+    <li><a href="../../AccountsControllerTest.html">AccountsControllerTest</a>
+  
+    <li><a href="../../AccountsHelper.html">AccountsHelper</a>
+  
+    <li><a href="../../AccountsHelperTest.html">AccountsHelperTest</a>
+  
+    <li><a href="../../AddProjectDate.html">AddProjectDate</a>
+  
+    <li><a href="../../Allocation.html">Allocation</a>
+  
+    <li><a href="../../AllocationTest.html">AllocationTest</a>
+  
+    <li><a href="../../AllocationsController.html">AllocationsController</a>
+  
+    <li><a href="../../AllocationsControllerTest.html">AllocationsControllerTest</a>
+  
+    <li><a href="../../AllocationsHelper.html">AllocationsHelper</a>
+  
+    <li><a href="../../AllocationsHelperTest.html">AllocationsHelperTest</a>
+  
+    <li><a href="../../ApplicationController.html">ApplicationController</a>
+  
+    <li><a href="../../ApplicationHelper.html">ApplicationHelper</a>
+  
+    <li><a href="../../BrowsingTest.html">BrowsingTest</a>
+  
+    <li><a href="../../CreateAccounts.html">CreateAccounts</a>
+  
+    <li><a href="../../CreateAllocations.html">CreateAllocations</a>
+  
+    <li><a href="../../CreateExpenses.html">CreateExpenses</a>
+  
+    <li><a href="../../CreateProjects.html">CreateProjects</a>
+  
+    <li><a href="../../CreateSuppliers.html">CreateSuppliers</a>
+  
+    <li><a href="../../Expense.html">Expense</a>
+  
+    <li><a href="../../ExpenseTest.html">ExpenseTest</a>
+  
+    <li><a href="../../ExpensesController.html">ExpensesController</a>
+  
+    <li><a href="../../ExpensesControllerTest.html">ExpensesControllerTest</a>
+  
+    <li><a href="../../ExpensesHelper.html">ExpensesHelper</a>
+  
+    <li><a href="../../ExpensesHelperTest.html">ExpensesHelperTest</a>
+  
+    <li><a href="../../Object.html">Object</a>
+  
+    <li><a href="../../Project.html">Project</a>
+  
+    <li><a href="../../ProjectTest.html">ProjectTest</a>
+  
+    <li><a href="../../ProjectsController.html">ProjectsController</a>
+  
+    <li><a href="../../ProjectsControllerTest.html">ProjectsControllerTest</a>
+  
+    <li><a href="../../ProjectsHelper.html">ProjectsHelper</a>
+  
+    <li><a href="../../ProjectsHelperTest.html">ProjectsHelperTest</a>
+  
+    <li><a href="../../Supplier.html">Supplier</a>
+  
+    <li><a href="../../SupplierTest.html">SupplierTest</a>
+  
+    <li><a href="../../SuppliersController.html">SuppliersController</a>
+  
+    <li><a href="../../SuppliersControllerTest.html">SuppliersControllerTest</a>
+  
+    <li><a href="../../SuppliersHelper.html">SuppliersHelper</a>
+  
+    <li><a href="../../SuppliersHelperTest.html">SuppliersHelperTest</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class SVG::Graph::Schedule</h1>
+
+  <div id="description" class="description">
+    
+<h3 id="label-For+creating+SVG+plots+of+scalar+temporal+data">For creating <a href="../../SVG.html">SVG</a> plots of scalar temporal data</h3>
+
+<h1 id="label-Synopsis">Synopsis</h1>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">'SVG/Graph/Schedule'</span>
+
+<span class="ruby-comment"># Data sets are label, start, end tripples.</span>
+<span class="ruby-identifier">data1</span> = [
+  <span class="ruby-string">&quot;Housesitting&quot;</span>, <span class="ruby-string">&quot;6/17/04&quot;</span>, <span class="ruby-string">&quot;6/19/04&quot;</span>, 
+  <span class="ruby-string">&quot;Summer Session&quot;</span>, <span class="ruby-string">&quot;6/15/04&quot;</span>, <span class="ruby-string">&quot;8/15/04&quot;</span>,
+]
+
+<span class="ruby-identifier">graph</span> = <span class="ruby-constant">SVG</span><span class="ruby-operator">::</span><span class="ruby-constant">Graph</span><span class="ruby-operator">::</span><span class="ruby-constant">Schedule</span>.<span class="ruby-identifier">new</span>( {
+  :<span class="ruby-identifier">width</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">640</span>,
+  :<span class="ruby-identifier">height</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">480</span>,
+  :<span class="ruby-identifier">graph_title</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">title</span>,
+  :<span class="ruby-identifier">show_graph_title</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>,
+  :<span class="ruby-identifier">no_css</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>,
+  :<span class="ruby-identifier">scale_x_integers</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>,
+  :<span class="ruby-identifier">scale_y_integers</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>,
+  :<span class="ruby-identifier">min_x_value</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>,
+  :<span class="ruby-identifier">min_y_value</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>,
+  :<span class="ruby-identifier">show_data_labels</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>,
+  :<span class="ruby-identifier">show_x_guidelines</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>,
+  :<span class="ruby-identifier">show_x_title</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>,
+  :<span class="ruby-identifier">x_title</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Time&quot;</span>,
+  :<span class="ruby-identifier">stagger_x_labels</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>,
+  :<span class="ruby-identifier">stagger_y_labels</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>,
+  :<span class="ruby-identifier">x_label_format</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;%m/%d/%y&quot;</span>,
+})
+
+<span class="ruby-identifier">graph</span>.<span class="ruby-identifier">add_data</span>({
+        :<span class="ruby-identifier">data</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">data1</span>,
+  :<span class="ruby-identifier">title</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'Data'</span>,
+})
+
+<span class="ruby-identifier">print</span> <span class="ruby-identifier">graph</span>.<span class="ruby-identifier">burn</span>()
+</pre>
+
+<h1 id="label-Description">Description</h1>
+
+<p>Produces a graph of temporal scalar data.</p>
+
+<h1 id="label-Examples">Examples</h1>
+
+<p><a
+href="http://www.germane-software/repositories/public/SVG/test/schedule.rb">www.germane-software/repositories/public/SVG/test/schedule.rb</a></p>
+
+<h1 id="label-Notes">Notes</h1>
+
+<p>The default stylesheet handles upto 10 data sets, if you use more you must
+create your own stylesheet and add the additional settings for the extra
+data sets. You will know if you go over 10 data sets as they will have no
+style and be in black.</p>
+
+<p>Note that multiple data sets within the same chart can differ in  length,
+and that the data in the datasets needn't be in order;  they will be
+ordered by the plot along the X-axis.</p>
+
+<p>The dates must be parseable by ParseDate, but otherwise can be any order of
+magnitude (seconds within the hour, or years)</p>
+
+<h1 id="label-See+also">See also</h1>
+<ul><li>
+<p><a href="Graph.html">SVG::Graph::Graph</a></p>
+</li><li>
+<p><a href="BarHorizontal.html">SVG::Graph::BarHorizontal</a></p>
+</li><li>
+<p><a href="Bar.html">SVG::Graph::Bar</a></p>
+</li><li>
+<p><a href="Line.html">SVG::Graph::Line</a></p>
+</li><li>
+<p><a href="Pie.html">SVG::Graph::Pie</a></p>
+</li><li>
+<p><a href="Plot.html">SVG::Graph::Plot</a></p>
+</li><li>
+<p><a href="TimeSeries.html">SVG::Graph::TimeSeries</a></p>
+</li></ul>
+
+<h2 id="label-Author">Author</h2>
+
+<p>Sean E. Russell &lt;serATgermaneHYPHENsoftwareDOTcom&gt;</p>
+
+<p>Copyright 2004 Sean E. Russell This software is available under the Ruby <a
+href="http://LICENSE.txt">license</a></p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <!-- Attributes -->
+    <section id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="attribute-i-bar_gap" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">bar_gap</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-min_x_value" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">min_x_value</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-popup_format" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">popup_format</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>The formatting used for the popups.  See <a
+href="Schedule.html#attribute-i-x_label_format">#x_label_format</a></p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-scale_x_divisions" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">scale_x_divisions</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-scale_x_integers" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">scale_x_integers</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-timescale_divisions" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">timescale_divisions</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Use this to set the spacing between dates on the axis.  The value must be
+of the form  "d+ ?(days|weeks|months|years|hours|minutes|seconds)?"</p>
+
+<p>EG:</p>
+
+<pre>graph.timescale_divisions = &quot;2 weeks&quot;</pre>
+
+<p>will cause the chart to try to divide the X axis up into segments of two
+week periods.</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-x_label_format" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">x_label_format</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>The format string use do format the X axis labels. See Time::strformat</p>
+        
+        </div>
+      </div>
+      
+    </section><!-- attribute-method-details -->
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-add_data" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_data</span><span
+            class="method-args">(data)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Add data to the plot.</p>
+
+<pre class="ruby"><span class="ruby-comment"># A data set with 1 point: Lunch from 12:30 to 14:00</span>
+<span class="ruby-identifier">d1</span> = [ <span class="ruby-string">&quot;Lunch&quot;</span>, <span class="ruby-string">&quot;12:30&quot;</span>, <span class="ruby-string">&quot;14:00&quot;</span> ] 
+<span class="ruby-comment"># A data set with 2 points: &quot;Cats&quot; runs from 5/11/03 to 7/15/04, and</span>
+<span class="ruby-comment">#                           &quot;Henry V&quot; runs from 6/12/03 to 8/20/03</span>
+<span class="ruby-identifier">d2</span> = [ <span class="ruby-string">&quot;Cats&quot;</span>, <span class="ruby-string">&quot;5/11/03&quot;</span>, <span class="ruby-string">&quot;7/15/04&quot;</span>,
+       <span class="ruby-string">&quot;Henry V&quot;</span>, <span class="ruby-string">&quot;6/12/03&quot;</span>, <span class="ruby-string">&quot;8/20/03&quot;</span> ]
+
+<span class="ruby-identifier">graph</span>.<span class="ruby-identifier">add_data</span>( 
+  :<span class="ruby-identifier">data</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">d1</span>,
+  :<span class="ruby-identifier">title</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'Meetings'</span>
+)
+<span class="ruby-identifier">graph</span>.<span class="ruby-identifier">add_data</span>(
+  :<span class="ruby-identifier">data</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">d2</span>,
+  :<span class="ruby-identifier">title</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'Plays'</span>
+)
+</pre>
+
+<p>Note that the data must be in time,value pairs, and that the date format
+may be any date that is parseable by ParseDate. Also note that, in this
+example, we're mixing scales; the data from d1 will probably not be
+discernable if both data sets are plotted on the same graph, since d1 is
+too granular.</p>
+          
+
+          
+          <div class="method-source-code" id="add_data-source">
+            <pre><span class="ruby-comment"># File lib/SVG/Graph/Schedule.rb, line 143</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">add_data</span> <span class="ruby-identifier">data</span>
+  <span class="ruby-ivar">@data</span> = [] <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@data</span>
+ 
+  <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;No data provided by #{conf.inspect}&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">data</span>[<span class="ruby-value">:data</span>] <span class="ruby-keyword">and</span>
+                                              <span class="ruby-identifier">data</span>[<span class="ruby-value">:data</span>].<span class="ruby-identifier">kind_of?</span> <span class="ruby-constant">Array</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-string">&quot;Data supplied must be title,from,to tripples!  &quot;</span><span class="ruby-operator">+</span>
+    <span class="ruby-string">&quot;The data provided contained an odd set of &quot;</span><span class="ruby-operator">+</span>
+    <span class="ruby-string">&quot;data points&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">data</span>[<span class="ruby-value">:data</span>].<span class="ruby-identifier">length</span> <span class="ruby-operator">%</span> <span class="ruby-value">3</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">data</span>[<span class="ruby-value">:data</span>].<span class="ruby-identifier">length</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+
+
+  <span class="ruby-identifier">y</span> = []
+  <span class="ruby-identifier">x_start</span> = []
+  <span class="ruby-identifier">x_end</span> = []
+  <span class="ruby-identifier">data</span>[<span class="ruby-value">:data</span>].<span class="ruby-identifier">each_index</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">im3</span> = <span class="ruby-identifier">i</span><span class="ruby-operator">%</span><span class="ruby-value">3</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">im3</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+      <span class="ruby-identifier">y</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">data</span>[<span class="ruby-value">:data</span>][<span class="ruby-identifier">i</span>]
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">arr</span> = <span class="ruby-constant">ParseDate</span>.<span class="ruby-identifier">parsedate</span>( <span class="ruby-identifier">data</span>[<span class="ruby-value">:data</span>][<span class="ruby-identifier">i</span>] )
+      <span class="ruby-identifier">t</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">local</span>( *<span class="ruby-identifier">arr</span>[<span class="ruby-value">0</span>,<span class="ruby-value">6</span>].<span class="ruby-identifier">compact</span> )
+      (<span class="ruby-identifier">im3</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">x_start</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">x_end</span>) <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">t</span>.<span class="ruby-identifier">to_i</span>
+    <span class="ruby-keyword">end</span>
+  }
+  <span class="ruby-identifier">sort</span>( <span class="ruby-identifier">x_start</span>, <span class="ruby-identifier">x_end</span>, <span class="ruby-identifier">y</span> )
+  <span class="ruby-ivar">@data</span> = [<span class="ruby-identifier">x_start</span>, <span class="ruby-identifier">x_end</span>, <span class="ruby-identifier">y</span> ]
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- add_data-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- add_data-method -->
+
+    
+      <div id="method-i-set_defaults" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">set_defaults</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>In addition to the defaults set by Graph::initialize and
+Plot::set_defaults, sets:</p>
+<dl class="rdoc-list label-list"><dt><a href="Schedule.html#attribute-i-x_label_format">#x_label_format</a>
+<dd>
+<p>'%Y-%m-%d %H:%M:%S'</p>
+</dd><dt><a href="Schedule.html#attribute-i-popup_format">#popup_format</a>
+<dd>
+<p>'%Y-%m-%d %H:%M:%S'</p>
+</dd></dl>
+          
+
+          
+          <div class="method-source-code" id="set_defaults-source">
+            <pre><span class="ruby-comment"># File lib/SVG/Graph/Schedule.rb, line 89</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">set_defaults</span>
+  <span class="ruby-identifier">init_with</span>(
+    <span class="ruby-value">:x_label_format</span>     =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'%Y-%m-%d %H:%M:%S'</span>,
+    <span class="ruby-value">:popup_format</span>       =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'%Y-%m-%d %H:%M:%S'</span>,
+    <span class="ruby-value">:scale_x_divisions</span>  =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">false</span>,
+    <span class="ruby-value">:scale_x_integers</span>   =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">false</span>,
+    <span class="ruby-value">:bar_gap</span>            =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>
+  )
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- set_defaults-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- set_defaults-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+     <section id="protected-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Protected Instance Methods</h3>
+
+    
+      <div id="method-i-draw_data" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">draw_data</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="draw_data-source">
+            <pre><span class="ruby-comment"># File lib/SVG/Graph/Schedule.rb, line 196</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">draw_data</span>
+  <span class="ruby-identifier">fieldheight</span> = <span class="ruby-identifier">field_height</span>
+  <span class="ruby-identifier">fieldwidth</span> = <span class="ruby-identifier">field_width</span>
+
+  <span class="ruby-identifier">bargap</span> = <span class="ruby-identifier">bar_gap</span> <span class="ruby-operator">?</span> (<span class="ruby-identifier">fieldheight</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">10</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">fieldheight</span> <span class="ruby-operator">/</span> <span class="ruby-value">2</span> <span class="ruby-operator">:</span> <span class="ruby-value">10</span>) <span class="ruby-operator">:</span> <span class="ruby-value">0</span>
+  <span class="ruby-identifier">subbar_height</span> = <span class="ruby-identifier">fieldheight</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">bargap</span>
+  
+  <span class="ruby-identifier">field_count</span> = <span class="ruby-value">1</span>
+  <span class="ruby-identifier">y_mod</span> = (<span class="ruby-identifier">subbar_height</span> <span class="ruby-operator">/</span> <span class="ruby-value">2</span>) <span class="ruby-operator">+</span> (<span class="ruby-identifier">font_size</span> <span class="ruby-operator">/</span> <span class="ruby-value">2</span>)
+  <span class="ruby-identifier">min</span>,<span class="ruby-identifier">max</span>,<span class="ruby-identifier">div</span> = <span class="ruby-identifier">x_range</span>
+  <span class="ruby-identifier">scale</span> = (<span class="ruby-ivar">@graph_width</span>.<span class="ruby-identifier">to_f</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">font_size</span>*<span class="ruby-value">2</span>) <span class="ruby-operator">/</span> (<span class="ruby-identifier">max</span><span class="ruby-operator">-</span><span class="ruby-identifier">min</span>)
+  <span class="ruby-ivar">@data</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">each_index</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">x_start</span> = <span class="ruby-ivar">@data</span>[<span class="ruby-value">0</span>][<span class="ruby-identifier">i</span>]
+    <span class="ruby-identifier">x_end</span> = <span class="ruby-ivar">@data</span>[<span class="ruby-value">1</span>][<span class="ruby-identifier">i</span>]
+    <span class="ruby-identifier">y</span> = <span class="ruby-ivar">@graph_height</span> <span class="ruby-operator">-</span> (<span class="ruby-identifier">fieldheight</span> * <span class="ruby-identifier">field_count</span>)
+    <span class="ruby-identifier">bar_width</span> = (<span class="ruby-identifier">x_end</span><span class="ruby-operator">-</span><span class="ruby-identifier">x_start</span>) * <span class="ruby-identifier">scale</span>
+    <span class="ruby-identifier">bar_start</span> = <span class="ruby-identifier">x_start</span> * <span class="ruby-identifier">scale</span> <span class="ruby-operator">-</span> (<span class="ruby-identifier">min</span> * <span class="ruby-identifier">scale</span>)
+  
+    <span class="ruby-ivar">@graph</span>.<span class="ruby-identifier">add_element</span>( <span class="ruby-string">&quot;rect&quot;</span>, {
+      <span class="ruby-string">&quot;x&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">bar_start</span>.<span class="ruby-identifier">to_s</span>,
+      <span class="ruby-string">&quot;y&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">y</span>.<span class="ruby-identifier">to_s</span>,
+      <span class="ruby-string">&quot;width&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">bar_width</span>.<span class="ruby-identifier">to_s</span>,
+      <span class="ruby-string">&quot;height&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">subbar_height</span>.<span class="ruby-identifier">to_s</span>,
+      <span class="ruby-string">&quot;class&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;fill#{field_count+1}&quot;</span>
+    })
+    <span class="ruby-identifier">field_count</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+  }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- draw_data-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- draw_data-method -->
+
+    
+      <div id="method-i-format" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">format</span><span
+            class="method-args">(x, y)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="format-source">
+            <pre><span class="ruby-comment"># File lib/SVG/Graph/Schedule.rb, line 180</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">format</span> <span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>
+  <span class="ruby-constant">Time</span>.<span class="ruby-identifier">at</span>( <span class="ruby-identifier">x</span> ).<span class="ruby-identifier">strftime</span>( <span class="ruby-identifier">popup_format</span> )
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- format-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- format-method -->
+
+    
+      <div id="method-i-get_css" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_css</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="get_css-source">
+            <pre><span class="ruby-comment"># File lib/SVG/Graph/Schedule.rb, line 225</span>
+      <span class="ruby-keyword">def</span> <span class="ruby-identifier">get_css</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-string">&quot;/* default fill styles for multiple datasets (probably only use a single dataset on this graph though) */
+.key1,.fill1{
+        fill: #ff0000;
+        fill-opacity: 0.5;
+        stroke: none;
+        stroke-width: 0.5px;   
+}
+.key2,.fill2{
+        fill: #0000ff;
+        fill-opacity: 0.5;
+        stroke: none;
+        stroke-width: 1px;     
+}
+.key3,.fill3{
+        fill: #00ff00;
+        fill-opacity: 0.5;
+        stroke: none;
+        stroke-width: 1px;     
+}
+.key4,.fill4{
+        fill: #ffcc00;
+        fill-opacity: 0.5;
+        stroke: none;
+        stroke-width: 1px;     
+}
+.key5,.fill5{
+        fill: #00ccff;
+        fill-opacity: 0.5;
+        stroke: none;
+        stroke-width: 1px;     
+}
+.key6,.fill6{
+        fill: #ff00ff;
+        fill-opacity: 0.5;
+        stroke: none;
+        stroke-width: 1px;     
+}
+.key7,.fill7{
+        fill: #00ffff;
+        fill-opacity: 0.5;
+        stroke: none;
+        stroke-width: 1px;     
+}
+.key8,.fill8{
+        fill: #ffff00;
+        fill-opacity: 0.5;
+        stroke: none;
+        stroke-width: 1px;     
+}
+.key9,.fill9{
+        fill: #cc6666;
+        fill-opacity: 0.5;
+        stroke: none;
+        stroke-width: 1px;     
+}
+.key10,.fill10{
+        fill: #663399;
+        fill-opacity: 0.5;
+        stroke: none;
+        stroke-width: 1px;     
+}
+.key11,.fill11{
+        fill: #339900;
+        fill-opacity: 0.5;
+        stroke: none;
+        stroke-width: 1px;     
+}
+.key12,.fill12{
+        fill: #9966FF;
+        fill-opacity: 0.5;
+        stroke: none;
+        stroke-width: 1px;     
+}
+&quot;</span>
+      <span class="ruby-keyword">end</span></pre>
+          </div><!-- get_css-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- get_css-method -->
+
+    
+      <div id="method-i-get_x_labels" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_x_labels</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="get_x_labels-source">
+            <pre><span class="ruby-comment"># File lib/SVG/Graph/Schedule.rb, line 184</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_x_labels</span>
+  <span class="ruby-identifier">rv</span> = <span class="ruby-identifier">get_x_values</span>.<span class="ruby-identifier">collect</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-constant">Time</span>.<span class="ruby-identifier">at</span>(<span class="ruby-identifier">v</span>).<span class="ruby-identifier">strftime</span>( <span class="ruby-identifier">x_label_format</span> ) }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- get_x_labels-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- get_x_labels-method -->
+
+    
+      <div id="method-i-get_y_labels" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_y_labels</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="get_y_labels-source">
+            <pre><span class="ruby-comment"># File lib/SVG/Graph/Schedule.rb, line 192</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_y_labels</span>
+  <span class="ruby-ivar">@data</span>[<span class="ruby-value">2</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- get_y_labels-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- get_y_labels-method -->
+
+    
+      <div id="method-i-min_x_value-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">min_x_value=</span><span
+            class="method-args">(value)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="min_x_value-3D-source">
+            <pre><span class="ruby-comment"># File lib/SVG/Graph/Schedule.rb, line 174</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">min_x_value=</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-identifier">arr</span> = <span class="ruby-constant">ParseDate</span>.<span class="ruby-identifier">parsedate</span>( <span class="ruby-identifier">value</span> )
+  <span class="ruby-ivar">@min_x_value</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">local</span>( *<span class="ruby-identifier">arr</span>[<span class="ruby-value">0</span>,<span class="ruby-value">6</span>].<span class="ruby-identifier">compact</span> ).<span class="ruby-identifier">to_i</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- min_x_value-3D-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- min_x_value-3D-method -->
+
+    
+      <div id="method-i-y_label_offset" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">y_label_offset</span><span
+            class="method-args">( height )</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="y_label_offset-source">
+            <pre><span class="ruby-comment"># File lib/SVG/Graph/Schedule.rb, line 188</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">y_label_offset</span>( <span class="ruby-identifier">height</span> )
+  <span class="ruby-identifier">height</span> <span class="ruby-operator">/</span> <span class="ruby-value">-2.0</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- y_label_offset-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- y_label_offset-method -->
+
+    
+    </section><!-- protected-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

@@ -1,5 +1,7 @@
-<h1>New account for <%= @project.name %></h1>
+<h1>New account for <%= @account.project.name %></h1>
 
-<%= render 'form' %>
+<div class="span12">
+	<%= render 'form' %>
+</div>
 
-<%= link_to 'Back', project_path(@project) %>
+<%= link_to 'Back', projects_path(@project), :class => 'btn' %>

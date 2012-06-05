@@ -5,7 +5,7 @@ class AddProjectDate < ActiveRecord::Migration
   end
 
   def down
-		remove_column :projects, start_date
-		remove_column :projects, end_date
+		remove_column :projects, :start_date
+		remove_column :projects, :end_date
   end
 end

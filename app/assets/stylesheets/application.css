@@ -10,8 +10,8 @@
  *
  *= require_self
  *= require_tree .
- *= require formtastic
  *= require bootstrap
+ *= require formtastic-bootstrap
  *= require graph
  *= require jquery-ui-1.8.20.custom.css
 */

@@ -24,8 +24,8 @@ class AccountsController < ApplicationController
   # GET /accounts/new
   # GET /accounts/new.json
   def new
-		@project = Project.find(params[:project_id])
     @account = Account.new
+		@account.project = Project.find params[:project]
 
     respond_to do |format|
       format.html # new.html.erb
@@ -42,8 +42,7 @@ class AccountsController < ApplicationController
   # POST /accounts.json
   def create
     @account = Account.new(params[:account])
-		@account.project_id = params[:project_id]
-
+		
     respond_to do |format|
       if @account.save
         format.html { redirect_to project_path( @account.project ), notice: 'Account was successfully created.' }
@@ -75,10 +74,11 @@ class AccountsController < ApplicationController
   # DELETE /accounts/1.json
   def destroy
     @account = Account.find(params[:id])
+		project = @account.project
     @account.destroy
 
     respond_to do |format|
-      format.html { redirect_to accounts_url }
+      format.html { redirect_to project_path( project ), notice: 'Account was successfully deleted.' }
       format.json { head :no_content }
     end
   end

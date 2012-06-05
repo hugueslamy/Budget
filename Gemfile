@@ -9,6 +9,7 @@ gem 'sqlite3'
 gem 'pg'
 gem 'haml'
 gem "formtastic", "~> 2.2.0"
+gem 'formtastic-bootstrap', :git => 'https://github.com/cgunther/formtastic-bootstrap.git', :branch => 'bootstrap2-rails3-2-formtastic-2-1'
 
 # Gems used only for assets and not required
 # in production environments by default.

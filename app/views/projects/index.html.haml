@@ -1,7 +1,5 @@
 %h1 Listing projects
 
-= link_to 'New Project', new_project_path
-
 %table
 	%tr
 		%th Name
@@ -9,9 +7,14 @@
 		%th
 	- @projects.each do |project|
 		%tr
-			%td= link_to( project.name, project )
-			%td= link_to 'Edit', edit_project_path(project)
-			%td= link_to 'Destroy', project, confirm: 'Are you sure?', method: :delete
-
-%br/
-
+			%td
+				= link_to( project.name, project )
+				( #{project.start_date} -  #{project.end_date})
+			%td
+				= link_to edit_project_path(project), :class => 'btn  btn-action btn-mini' do
+					%i.icon-cog
+					Edit
+			%td
+				= link_to project, confirm: 'Are you sure?', method: :delete, :class => 'btn  btn-danger btn-mini' do
+					%i.icon-trash
+					Delete

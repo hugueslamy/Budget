@@ -1,0 +1,38 @@
+%div.navbar
+	%div.navbar-inner
+		%div.container
+			%div.brand Budget Tracking tool
+			%nav
+				%ul.nav
+					%li
+						%a{:href => '/projects', :title => 'Projects List'}
+							Home
+					%li.dropdown
+						%a.dropdown-toggle{:href => '#', :title => 'Projects', "data-toggle" => 'dropdown'} 
+							Projects
+							%span.caret
+						%ul.dropdown-menu
+							%li= link_to 'Add project', new_project_path
+							%li.divider
+							- Project.all.each do |project|
+								%li= link_to project.name, project_path( project )
+					%li.dropdown
+						%a.dropdown-toggle{:href => '#', :title => 'Suppliers', "data-toggle" => 'dropdown'}
+							Suppliers
+							%span.caret
+						%ul.dropdown-menu
+							%li= link_to 'Show all', suppliers_path
+							%li= link_to 'Add supplier', new_supplier_path
+							%li.divider
+							- Supplier.all.each do |supplier|
+								%li= link_to supplier.name, supplier_path( supplier )
+					%li.dropdown
+						%a.dropdown-toggle{ :href => "#", :title => 'Accounts', "data-toggle" => 'dropdown' }
+							Accounts
+							%span.caret
+						%ul.dropdown-menu
+							%li= link_to 'Show all', accounts_path
+							%li.divider
+							- unless project.nil?
+								- project.accounts.each do |account|
+									%li= link_to account.name, account_path( account )

@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=CP850" http-equiv="Content-Type">
+
+<title>proj_tree - RDoc Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body class="file">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./Gemfile.html">Gemfile</a>
+  
+    <li class="file"><a href="./README_rdoc.html">README</a>
+  
+    <li class="file"><a href="./Rakefile.html">Rakefile</a>
+  
+    <li class="file"><a href="./doc/README_FOR_APP.html">README_FOR_APP</a>
+  
+    <li class="file"><a href="./lib/SVG/GPL_txt.html">GPL</a>
+  
+    <li class="file"><a href="./lib/SVG/LICENSE_txt.html">LICENSE</a>
+  
+    <li class="file"><a href="./proj_tree.html">proj_tree</a>
+  
+    <li class="file"><a href="./public/robots_txt.html">robots</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./SVG.html">SVG</a>
+  
+    <li><a href="./SVG/Graph.html">SVG::Graph</a>
+  
+    <li><a href="./SVG/Graph/Bar.html">SVG::Graph::Bar</a>
+  
+    <li><a href="./SVG/Graph/BarBase.html">SVG::Graph::BarBase</a>
+  
+    <li><a href="./SVG/Graph/BarHorizontal.html">SVG::Graph::BarHorizontal</a>
+  
+    <li><a href="./SVG/Graph/Graph.html">SVG::Graph::Graph</a>
+  
+    <li><a href="./SVG/Graph/Line.html">SVG::Graph::Line</a>
+  
+    <li><a href="./SVG/Graph/Pie.html">SVG::Graph::Pie</a>
+  
+    <li><a href="./SVG/Graph/Plot.html">SVG::Graph::Plot</a>
+  
+    <li><a href="./SVG/Graph/Schedule.html">SVG::Graph::Schedule</a>
+  
+    <li><a href="./SVG/Graph/TimeSeries.html">SVG::Graph::TimeSeries</a>
+  
+    <li><a href="./ActiveSupport.html">ActiveSupport</a>
+  
+    <li><a href="./ActiveSupport/TestCase.html">ActiveSupport::TestCase</a>
+  
+    <li><a href="./Budget.html">Budget</a>
+  
+    <li><a href="./Budget/Application.html">Budget::Application</a>
+  
+    <li><a href="./Account.html">Account</a>
+  
+    <li><a href="./AccountTest.html">AccountTest</a>
+  
+    <li><a href="./AccountsController.html">AccountsController</a>
+  
+    <li><a href="./AccountsControllerTest.html">AccountsControllerTest</a>
+  
+    <li><a href="./AccountsHelper.html">AccountsHelper</a>
+  
+    <li><a href="./AccountsHelperTest.html">AccountsHelperTest</a>
+  
+    <li><a href="./AddProjectDate.html">AddProjectDate</a>
+  
+    <li><a href="./Allocation.html">Allocation</a>
+  
+    <li><a href="./AllocationTest.html">AllocationTest</a>
+  
+    <li><a href="./AllocationsController.html">AllocationsController</a>
+  
+    <li><a href="./AllocationsControllerTest.html">AllocationsControllerTest</a>
+  
+    <li><a href="./AllocationsHelper.html">AllocationsHelper</a>
+  
+    <li><a href="./AllocationsHelperTest.html">AllocationsHelperTest</a>
+  
+    <li><a href="./ApplicationController.html">ApplicationController</a>
+  
+    <li><a href="./ApplicationHelper.html">ApplicationHelper</a>
+  
+    <li><a href="./BrowsingTest.html">BrowsingTest</a>
+  
+    <li><a href="./CreateAccounts.html">CreateAccounts</a>
+  
+    <li><a href="./CreateAllocations.html">CreateAllocations</a>
+  
+    <li><a href="./CreateExpenses.html">CreateExpenses</a>
+  
+    <li><a href="./CreateProjects.html">CreateProjects</a>
+  
+    <li><a href="./CreateSuppliers.html">CreateSuppliers</a>
+  
+    <li><a href="./Expense.html">Expense</a>
+  
+    <li><a href="./ExpenseTest.html">ExpenseTest</a>
+  
+    <li><a href="./ExpensesController.html">ExpensesController</a>
+  
+    <li><a href="./ExpensesControllerTest.html">ExpensesControllerTest</a>
+  
+    <li><a href="./ExpensesHelper.html">ExpensesHelper</a>
+  
+    <li><a href="./ExpensesHelperTest.html">ExpensesHelperTest</a>
+  
+    <li><a href="./Object.html">Object</a>
+  
+    <li><a href="./Project.html">Project</a>
+  
+    <li><a href="./ProjectTest.html">ProjectTest</a>
+  
+    <li><a href="./ProjectsController.html">ProjectsController</a>
+  
+    <li><a href="./ProjectsControllerTest.html">ProjectsControllerTest</a>
+  
+    <li><a href="./ProjectsHelper.html">ProjectsHelper</a>
+  
+    <li><a href="./ProjectsHelperTest.html">ProjectsHelperTest</a>
+  
+    <li><a href="./Supplier.html">Supplier</a>
+  
+    <li><a href="./SupplierTest.html">SupplierTest</a>
+  
+    <li><a href="./SuppliersController.html">SuppliersController</a>
+  
+    <li><a href="./SuppliersControllerTest.html">SuppliersControllerTest</a>
+  
+    <li><a href="./SuppliersHelper.html">SuppliersHelper</a>
+  
+    <li><a href="./SuppliersHelperTest.html">SuppliersHelperTest</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation" class="description">
+  
+<p>&lt;NotepadPlus&gt;</p>
+
+<pre>&lt;Project name=&quot;Budget&quot;&gt;
+    &lt;Folder name=&quot;app&quot;&gt;
+        &lt;Folder name=&quot;assets&quot;&gt;
+            &lt;Folder name=&quot;images&quot;&gt;
+                &lt;File name=&quot;app\assets\images\rails.png&quot; /&gt;
+            &lt;/Folder&gt;
+            &lt;Folder name=&quot;javascripts&quot;&gt;
+                &lt;File name=&quot;app\assets\javascripts\accounts.js.coffee&quot; /&gt;
+                &lt;File name=&quot;app\assets\javascripts\allocations.js.coffee&quot; /&gt;
+                &lt;File name=&quot;app\assets\javascripts\application.js&quot; /&gt;
+                &lt;File name=&quot;app\assets\javascripts\projects.js.coffee&quot; /&gt;
+            &lt;/Folder&gt;
+            &lt;Folder name=&quot;stylesheets&quot;&gt;
+                &lt;File name=&quot;app\assets\stylesheets\accounts.css.scss&quot; /&gt;
+                &lt;File name=&quot;app\assets\stylesheets\allocations.css.scss&quot; /&gt;
+                &lt;File name=&quot;app\assets\stylesheets\application.css&quot; /&gt;
+                &lt;File name=&quot;app\assets\stylesheets\projects.css.scss&quot; /&gt;
+                &lt;File name=&quot;app\assets\stylesheets\scaffolds.css.scss&quot; /&gt;
+            &lt;/Folder&gt;
+        &lt;/Folder&gt;
+        &lt;Folder name=&quot;controllers&quot;&gt;
+            &lt;File name=&quot;app\controllers\accounts_controller.rb&quot; /&gt;
+            &lt;File name=&quot;app\controllers\allocations_controller.rb&quot; /&gt;
+            &lt;File name=&quot;app\controllers\application_controller.rb&quot; /&gt;
+            &lt;File name=&quot;app\controllers\projects_controller.rb&quot; /&gt;
+        &lt;/Folder&gt;
+        &lt;Folder name=&quot;helpers&quot;&gt;
+            &lt;File name=&quot;app\helpers\accounts_helper.rb&quot; /&gt;
+            &lt;File name=&quot;app\helpers\allocations_helper.rb&quot; /&gt;
+            &lt;File name=&quot;app\helpers\application_helper.rb&quot; /&gt;
+            &lt;File name=&quot;app\helpers\projects_helper.rb&quot; /&gt;
+        &lt;/Folder&gt;
+        &lt;Folder name=&quot;mailers&quot;&gt;
+            &lt;File name=&quot;app\mailers\.gitkeep&quot; /&gt;
+        &lt;/Folder&gt;
+        &lt;Folder name=&quot;models&quot;&gt;
+            &lt;File name=&quot;app\models\.gitkeep&quot; /&gt;
+            &lt;File name=&quot;app\models\account.rb&quot; /&gt;
+            &lt;File name=&quot;app\models\allocation.rb&quot; /&gt;
+            &lt;File name=&quot;app\models\project.rb&quot; /&gt;
+        &lt;/Folder&gt;
+        &lt;Folder name=&quot;views&quot;&gt;
+            &lt;Folder name=&quot;accounts&quot;&gt;
+                &lt;File name=&quot;app\views\accounts\edit.html.erb&quot; /&gt;
+                &lt;File name=&quot;app\views\accounts\index.html.erb&quot; /&gt;
+                &lt;File name=&quot;app\views\accounts\new.html.erb&quot; /&gt;
+                &lt;File name=&quot;app\views\accounts\show.html.erb&quot; /&gt;
+                &lt;File name=&quot;app\views\accounts\_form.html.erb&quot; /&gt;
+            &lt;/Folder&gt;
+            &lt;Folder name=&quot;allocations&quot;&gt;
+                &lt;File name=&quot;app\views\allocations\edit.html.erb&quot; /&gt;
+                &lt;File name=&quot;app\views\allocations\index.html.erb&quot; /&gt;
+                &lt;File name=&quot;app\views\allocations\new.html.erb&quot; /&gt;
+                &lt;File name=&quot;app\views\allocations\show.html.erb&quot; /&gt;
+                &lt;File name=&quot;app\views\allocations\_form.html.erb&quot; /&gt;
+            &lt;/Folder&gt;
+            &lt;Folder name=&quot;layouts&quot;&gt;
+                &lt;File name=&quot;app\views\layouts\application.html.haml&quot; /&gt;
+            &lt;/Folder&gt;
+            &lt;Folder name=&quot;projects&quot;&gt;
+                &lt;File name=&quot;app\views\projects\edit.html.erb&quot; /&gt;
+                &lt;File name=&quot;app\views\projects\index.html.haml&quot; /&gt;
+                &lt;File name=&quot;app\views\projects\new.html.erb&quot; /&gt;
+                &lt;File name=&quot;app\views\projects\show.html.haml&quot; /&gt;
+                &lt;File name=&quot;app\views\projects\_form.html.erb&quot; /&gt;
+            &lt;/Folder&gt;
+        &lt;/Folder&gt;
+    &lt;/Folder&gt;
+    &lt;Folder name=&quot;config&quot;&gt;
+        &lt;Folder name=&quot;environments&quot;&gt;
+            &lt;File name=&quot;config\environments\development.rb&quot; /&gt;
+            &lt;File name=&quot;config\environments\production.rb&quot; /&gt;
+            &lt;File name=&quot;config\environments\test.rb&quot; /&gt;
+        &lt;/Folder&gt;
+        &lt;Folder name=&quot;initializers&quot;&gt;
+            &lt;File name=&quot;config\initializers\backtrace_silencers.rb&quot; /&gt;
+            &lt;File name=&quot;config\initializers\inflections.rb&quot; /&gt;
+            &lt;File name=&quot;config\initializers\mime_types.rb&quot; /&gt;
+            &lt;File name=&quot;config\initializers\secret_token.rb&quot; /&gt;
+            &lt;File name=&quot;config\initializers\session_store.rb&quot; /&gt;
+            &lt;File name=&quot;config\initializers\wrap_parameters.rb&quot; /&gt;
+        &lt;/Folder&gt;
+        &lt;Folder name=&quot;locales&quot;&gt;
+            &lt;File name=&quot;config\locales\en.yml&quot; /&gt;
+        &lt;/Folder&gt;
+        &lt;File name=&quot;config\application.rb&quot; /&gt;
+        &lt;File name=&quot;config\boot.rb&quot; /&gt;
+        &lt;File name=&quot;config\database.yml&quot; /&gt;
+        &lt;File name=&quot;config\environment.rb&quot; /&gt;
+        &lt;File name=&quot;config\routes.rb&quot; /&gt;
+    &lt;/Folder&gt;
+    &lt;Folder name=&quot;db&quot;&gt;
+        &lt;Folder name=&quot;migrate&quot;&gt;
+            &lt;File name=&quot;db\migrate\20120501152831_create_accounts.rb&quot; /&gt;
+            &lt;File name=&quot;db\migrate\20120501153015_create_allocations.rb&quot; /&gt;
+            &lt;File name=&quot;db\migrate\20120501155813_create_projects.rb&quot; /&gt;
+        &lt;/Folder&gt;
+        &lt;File name=&quot;db\development.sqlite3&quot; /&gt;
+        &lt;File name=&quot;db\schema.rb&quot; /&gt;
+        &lt;File name=&quot;db\seeds.rb&quot; /&gt;
+    &lt;/Folder&gt;
+    &lt;Folder name=&quot;doc&quot;&gt;
+        &lt;File name=&quot;doc\README_FOR_APP&quot; /&gt;
+    &lt;/Folder&gt;
+    &lt;Folder name=&quot;lib&quot;&gt;
+        &lt;Folder name=&quot;assets&quot;&gt;
+            &lt;File name=&quot;lib\assets\.gitkeep&quot; /&gt;
+        &lt;/Folder&gt;
+        &lt;Folder name=&quot;tasks&quot;&gt;
+            &lt;File name=&quot;lib\tasks\.gitkeep&quot; /&gt;
+        &lt;/Folder&gt;
+    &lt;/Folder&gt;
+    &lt;Folder name=&quot;log&quot;&gt;
+        &lt;File name=&quot;log\.gitkeep&quot; /&gt;
+        &lt;File name=&quot;log\development.log&quot; /&gt;
+    &lt;/Folder&gt;
+    &lt;Folder name=&quot;public&quot;&gt;
+        &lt;File name=&quot;public\404.html&quot; /&gt;
+        &lt;File name=&quot;public\422.html&quot; /&gt;
+        &lt;File name=&quot;public\500.html&quot; /&gt;
+        &lt;File name=&quot;public\favicon.ico&quot; /&gt;
+        &lt;File name=&quot;public\index.html&quot; /&gt;
+        &lt;File name=&quot;public\robots.txt&quot; /&gt;
+    &lt;/Folder&gt;
+    &lt;Folder name=&quot;script&quot;&gt;
+        &lt;File name=&quot;script\rails&quot; /&gt;
+    &lt;/Folder&gt;
+    &lt;Folder name=&quot;test&quot;&gt;
+        &lt;Folder name=&quot;fixtures&quot;&gt;
+            &lt;File name=&quot;test\fixtures\.gitkeep&quot; /&gt;
+            &lt;File name=&quot;test\fixtures\accounts.yml&quot; /&gt;
+            &lt;File name=&quot;test\fixtures\allocations.yml&quot; /&gt;
+            &lt;File name=&quot;test\fixtures\projects.yml&quot; /&gt;
+        &lt;/Folder&gt;
+        &lt;Folder name=&quot;functional&quot;&gt;
+            &lt;File name=&quot;test\functional\.gitkeep&quot; /&gt;
+            &lt;File name=&quot;test\functional\accounts_controller_test.rb&quot; /&gt;
+            &lt;File name=&quot;test\functional\allocations_controller_test.rb&quot; /&gt;
+            &lt;File name=&quot;test\functional\projects_controller_test.rb&quot; /&gt;
+        &lt;/Folder&gt;
+        &lt;Folder name=&quot;integration&quot;&gt;
+            &lt;File name=&quot;test\integration\.gitkeep&quot; /&gt;
+        &lt;/Folder&gt;
+        &lt;Folder name=&quot;performance&quot;&gt;
+            &lt;File name=&quot;test\performance\browsing_test.rb&quot; /&gt;
+        &lt;/Folder&gt;
+        &lt;Folder name=&quot;unit&quot;&gt;
+            &lt;Folder name=&quot;helpers&quot;&gt;
+                &lt;File name=&quot;test\unit\helpers\accounts_helper_test.rb&quot; /&gt;
+                &lt;File name=&quot;test\unit\helpers\allocations_helper_test.rb&quot; /&gt;
+                &lt;File name=&quot;test\unit\helpers\projects_helper_test.rb&quot; /&gt;
+            &lt;/Folder&gt;
+            &lt;File name=&quot;test\unit\.gitkeep&quot; /&gt;
+            &lt;File name=&quot;test\unit\account_test.rb&quot; /&gt;
+            &lt;File name=&quot;test\unit\allocation_test.rb&quot; /&gt;
+            &lt;File name=&quot;test\unit\project_test.rb&quot; /&gt;
+        &lt;/Folder&gt;
+        &lt;File name=&quot;test\test_helper.rb&quot; /&gt;
+    &lt;/Folder&gt;
+    &lt;Folder name=&quot;tmp&quot;&gt;
+        &lt;Folder name=&quot;cache&quot;&gt;
+            &lt;Folder name=&quot;assets&quot;&gt;
+                &lt;Folder name=&quot;C5E&quot;&gt;
+                    &lt;Folder name=&quot;330&quot;&gt;
+                        &lt;File name=&quot;tmp\cache\assets\C5E\330\sprockets%2F1268c99dd5b6d0388745505d9409d224&quot; /&gt;
+                    &lt;/Folder&gt;
+                &lt;/Folder&gt;
+                &lt;Folder name=&quot;C87&quot;&gt;
+                    &lt;Folder name=&quot;CB0&quot;&gt;
+                        &lt;File name=&quot;tmp\cache\assets\C87\CB0\sprockets%2Fb56d54719ef8874416e4110ea286e504&quot; /&gt;
+                    &lt;/Folder&gt;
+                &lt;/Folder&gt;
+                &lt;Folder name=&quot;CA5&quot;&gt;
+                    &lt;Folder name=&quot;220&quot;&gt;
+                        &lt;File name=&quot;tmp\cache\assets\CA5\220\sprockets%2F2b6982ac4f57251707f935056aa20cb1&quot; /&gt;
+                    &lt;/Folder&gt;
+                &lt;/Folder&gt;
+                &lt;Folder name=&quot;CB6&quot;&gt;
+                    &lt;Folder name=&quot;200&quot;&gt;
+                        &lt;File name=&quot;tmp\cache\assets\CB6\200\sprockets%2F9d01a632d68d8506a4cb46e7897370d1&quot; /&gt;
+                    &lt;/Folder&gt;
+                &lt;/Folder&gt;
+                &lt;Folder name=&quot;CD7&quot;&gt;
+                    &lt;Folder name=&quot;6F0&quot;&gt;
+                        &lt;File name=&quot;tmp\cache\assets\CD7\6F0\sprockets%2Fbd3936370d0f952ada5774e2230046ed&quot; /&gt;
+                    &lt;/Folder&gt;
+                &lt;/Folder&gt;
+                &lt;Folder name=&quot;CD8&quot;&gt;
+                    &lt;Folder name=&quot;370&quot;&gt;
+                        &lt;File name=&quot;tmp\cache\assets\CD8\370\sprockets%2F357970feca3ac29060c1e3861e2c0953&quot; /&gt;
+                    &lt;/Folder&gt;
+                &lt;/Folder&gt;
+                &lt;Folder name=&quot;CE1&quot;&gt;
+                    &lt;Folder name=&quot;280&quot;&gt;
+                        &lt;File name=&quot;tmp\cache\assets\CE1\280\sprockets%2F95cd1c9401921f23355539aa9d97a0de&quot; /&gt;
+                    &lt;/Folder&gt;
+                &lt;/Folder&gt;
+                &lt;Folder name=&quot;CE8&quot;&gt;
+                    &lt;Folder name=&quot;390&quot;&gt;
+                        &lt;File name=&quot;tmp\cache\assets\CE8\390\sprockets%2Ffe578741336fbaf17729b0956ca2a492&quot; /&gt;
+                    &lt;/Folder&gt;
+                &lt;/Folder&gt;
+                &lt;Folder name=&quot;CF0&quot;&gt;
+                    &lt;Folder name=&quot;DA0&quot;&gt;
+                        &lt;File name=&quot;tmp\cache\assets\CF0\DA0\sprockets%2Fd7d5b37686831d37c4dd75e645f5e016&quot; /&gt;
+                    &lt;/Folder&gt;
+                &lt;/Folder&gt;
+                &lt;Folder name=&quot;CFE&quot;&gt;
+                    &lt;Folder name=&quot;010&quot;&gt;
+                        &lt;File name=&quot;tmp\cache\assets\CFE\010\sprockets%2F29312aec035001c6f2dd25966baf394a&quot; /&gt;
+                    &lt;/Folder&gt;
+                &lt;/Folder&gt;
+                &lt;Folder name=&quot;D32&quot;&gt;
+                    &lt;Folder name=&quot;A10&quot;&gt;
+                        &lt;File name=&quot;tmp\cache\assets\D32\A10\sprockets%2F13fe41fee1fe35b49d145bcc06610705&quot; /&gt;
+                    &lt;/Folder&gt;
+                &lt;/Folder&gt;
+                &lt;Folder name=&quot;D4E&quot;&gt;
+                    &lt;Folder name=&quot;1B0&quot;&gt;
+                        &lt;File name=&quot;tmp\cache\assets\D4E\1B0\sprockets%2Ff7cbd26ba1d28d48de824f0e94586655&quot; /&gt;
+                    &lt;/Folder&gt;
+                &lt;/Folder&gt;
+                &lt;Folder name=&quot;D55&quot;&gt;
+                    &lt;Folder name=&quot;C30&quot;&gt;
+                        &lt;File name=&quot;tmp\cache\assets\D55\C30\sprockets%2F5000a1e5b8c3caf136c16a8437b2fbf1&quot; /&gt;
+                    &lt;/Folder&gt;
+                &lt;/Folder&gt;
+                &lt;Folder name=&quot;D5A&quot;&gt;
+                    &lt;Folder name=&quot;EA0&quot;&gt;
+                        &lt;File name=&quot;tmp\cache\assets\D5A\EA0\sprockets%2Fd771ace226fc8215a3572e0aa35bb0d6&quot; /&gt;
+                    &lt;/Folder&gt;
+                &lt;/Folder&gt;
+                &lt;Folder name=&quot;D6A&quot;&gt;
+                    &lt;Folder name=&quot;520&quot;&gt;
+                        &lt;File name=&quot;tmp\cache\assets\D6A\520\sprockets%2F0ffcc1cd9e63c015c406c36107e98af6&quot; /&gt;
+                    &lt;/Folder&gt;
+                &lt;/Folder&gt;
+                &lt;Folder name=&quot;D9D&quot;&gt;
+                    &lt;Folder name=&quot;5D0&quot;&gt;
+                        &lt;File name=&quot;tmp\cache\assets\D9D\5D0\sprockets%2F90cc402ba7eb6735a8d46d7c31bdf9d4&quot; /&gt;
+                    &lt;/Folder&gt;
+                &lt;/Folder&gt;
+                &lt;Folder name=&quot;DA9&quot;&gt;
+                    &lt;Folder name=&quot;140&quot;&gt;
+                        &lt;File name=&quot;tmp\cache\assets\DA9\140\sprockets%2F73dc01c8c6ecec43d92469f4ce6c44c8&quot; /&gt;
+                    &lt;/Folder&gt;
+                &lt;/Folder&gt;
+                &lt;Folder name=&quot;DCA&quot;&gt;
+                    &lt;Folder name=&quot;950&quot;&gt;
+                        &lt;File name=&quot;tmp\cache\assets\DCA\950\sprockets%2Ff50ded6503dd1601ff1f73491ecdff3b&quot; /&gt;
+                    &lt;/Folder&gt;
+                &lt;/Folder&gt;
+                &lt;Folder name=&quot;DDC&quot;&gt;
+                    &lt;Folder name=&quot;400&quot;&gt;
+                        &lt;File name=&quot;tmp\cache\assets\DDC\400\sprockets%2Fcffd775d018f68ce5dba1ee0d951a994&quot; /&gt;
+                    &lt;/Folder&gt;
+                &lt;/Folder&gt;
+                &lt;Folder name=&quot;DE3&quot;&gt;
+                    &lt;Folder name=&quot;3D0&quot;&gt;
+                        &lt;File name=&quot;tmp\cache\assets\DE3\3D0\sprockets%2Fb8c49bf2bcf938696a74ee6b9efda530&quot; /&gt;
+                    &lt;/Folder&gt;
+                &lt;/Folder&gt;
+                &lt;Folder name=&quot;DEC&quot;&gt;
+                    &lt;Folder name=&quot;DF0&quot;&gt;
+                        &lt;File name=&quot;tmp\cache\assets\DEC\DF0\sprockets%2F4d3cf25ca5201e3562adaf3d5ea3dd5f&quot; /&gt;
+                    &lt;/Folder&gt;
+                &lt;/Folder&gt;
+                &lt;Folder name=&quot;E04&quot;&gt;
+                    &lt;Folder name=&quot;890&quot;&gt;
+                        &lt;File name=&quot;tmp\cache\assets\E04\890\sprockets%2F2f5173deea6c795b8fdde723bb4b63af&quot; /&gt;
+                    &lt;/Folder&gt;
+                &lt;/Folder&gt;
+                &lt;Folder name=&quot;E15&quot;&gt;
+                    &lt;Folder name=&quot;E30&quot;&gt;
+                        &lt;File name=&quot;tmp\cache\assets\E15\E30\sprockets%2Fdd6ad8575d298e8d4dcfceb8e4462fa6&quot; /&gt;
+                    &lt;/Folder&gt;
+                &lt;/Folder&gt;
+                &lt;Folder name=&quot;E19&quot;&gt;
+                    &lt;Folder name=&quot;2A0&quot;&gt;
+                        &lt;File name=&quot;tmp\cache\assets\E19\2A0\sprockets%2F10fcfbe6ebae11a40c8eac41939a1b9a&quot; /&gt;
+                    &lt;/Folder&gt;
+                &lt;/Folder&gt;
+                &lt;Folder name=&quot;E25&quot;&gt;
+                    &lt;Folder name=&quot;4C0&quot;&gt;
+                        &lt;File name=&quot;tmp\cache\assets\E25\4C0\sprockets%2Fde2fd9fd11c04a582cdbbe3d84a35ae6&quot; /&gt;
+                    &lt;/Folder&gt;
+                &lt;/Folder&gt;
+                &lt;Folder name=&quot;E3F&quot;&gt;
+                    &lt;Folder name=&quot;300&quot;&gt;
+                        &lt;File name=&quot;tmp\cache\assets\E3F\300\sprockets%2F6a9aefa66fb02368e6faf8e5a5d5edd9&quot; /&gt;
+                    &lt;/Folder&gt;
+                &lt;/Folder&gt;
+            &lt;/Folder&gt;
+            &lt;Folder name=&quot;sass&quot;&gt;
+                &lt;Folder name=&quot;ae2c17a134d0ea117fa29c69685752af2db403f1&quot;&gt;
+                    &lt;File name=&quot;tmp\cache\sass\ae2c17a134d0ea117fa29c69685752af2db403f1\accounts.css.scssc&quot; /&gt;
+                    &lt;File name=&quot;tmp\cache\sass\ae2c17a134d0ea117fa29c69685752af2db403f1\allocations.css.scssc&quot; /&gt;
+                    &lt;File name=&quot;tmp\cache\sass\ae2c17a134d0ea117fa29c69685752af2db403f1\projets.css.scssc&quot; /&gt;
+                    &lt;File name=&quot;tmp\cache\sass\ae2c17a134d0ea117fa29c69685752af2db403f1\scaffolds.css.scssc&quot; /&gt;
+                &lt;/Folder&gt;
+            &lt;/Folder&gt;
+        &lt;/Folder&gt;
+        &lt;Folder name=&quot;pids&quot;&gt;
+            &lt;File name=&quot;tmp\pids\server.pid&quot; /&gt;
+        &lt;/Folder&gt;
+        &lt;Folder name=&quot;sessions&quot; /&gt;
+        &lt;Folder name=&quot;sockets&quot; /&gt;
+    &lt;/Folder&gt;
+    &lt;Folder name=&quot;vendor&quot;&gt;
+        &lt;Folder name=&quot;assets&quot;&gt;
+            &lt;Folder name=&quot;javascripts&quot;&gt;
+                &lt;File name=&quot;vendor\assets\javascripts\.gitkeep&quot; /&gt;
+            &lt;/Folder&gt;
+            &lt;Folder name=&quot;stylesheets&quot;&gt;
+                &lt;File name=&quot;vendor\assets\stylesheets\.gitkeep&quot; /&gt;
+            &lt;/Folder&gt;
+        &lt;/Folder&gt;
+        &lt;Folder name=&quot;plugins&quot;&gt;
+            &lt;File name=&quot;vendor\plugins\.gitkeep&quot; /&gt;
+        &lt;/Folder&gt;
+    &lt;/Folder&gt;
+    &lt;File name=&quot;.gitignore&quot; /&gt;
+    &lt;File name=&quot;config.ru&quot; /&gt;
+    &lt;File name=&quot;Gemfile&quot; /&gt;
+    &lt;File name=&quot;Gemfile.lock&quot; /&gt;
+    &lt;File name=&quot;proj_tree&quot; /&gt;
+    &lt;File name=&quot;Rakefile&quot; /&gt;
+    &lt;File name=&quot;README.rdoc&quot; /&gt;
+&lt;/Project&gt;</pre>
+
+<p>&lt;/NotepadPlus&gt;</p>
+
+</div>
+
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

@@ -4,26 +4,10 @@
 		%title Budget
 		= stylesheet_link_tag "application", :media => "all"
 		= javascript_include_tag "application"
-		= javascript_include_tag "https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"
 		= csrf_meta_tags
 	%body
 		%div.container
 			%header
-				%div.navbar
-					%div.navbar-inner
-						%div.container
-							%div.brand Budget Tracking tool
-							%nav
-								%ul.nav
-									%li
-										%a{:href => '/projects', :title => 'Projects List'}
-											Home
-									%li.dropdown
-										%a.dropdown-toggle{:href => '#', :title => 'Projects', "data-toggle" => 'dropdown'} 
-											Projects
-											%span.caret
-										%ul.dropdown-menu
-											- Project.all.each do |project|
-												%li= link_to project.name, project_path( project )
+				=render :partial => 'layouts/nav', :locals => { :project => @project }
 			= yield
 			%footer
