@@ -6,6 +6,7 @@ table {
 	th {
 		background-color: LightGray;
 		padding: 3px;
+		vertical-align: top !important;
 	}
 	td {
 		padding: 3px;
@@ -15,4 +16,8 @@ table {
 
 .graph_title {
 	vertical-align: top;
+}
+
+.actions {
+	width: 146px;
 }
