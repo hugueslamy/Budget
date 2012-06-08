@@ -1,9 +1,43 @@
 %p#notice= notice
 
 %p
-  %b Name:
-  = @supplier.name
+	%b Name:
+	= @supplier.name
+	
+%h2 Expenses
+%table.table
+	%tr
+		%th.edit_button
+		%th.span1 Date
+		%th Summary
+		%th.span2 Value (accrue?)
+		%th.delete_button Actions
+	- @supplier.expenses.order("effective_date asc").each do |expense|		
+		%tr
+			%td
+				=link_to expense_path( expense ), :class => 'btn btn-action btn-small' do
+					%i.icon-pencil
+					Edit
+			%td= expense.effective_date
+			%td{ :id => [expense.class, expense.id] }= truncate( expense.try( :title ), :length => 60 )
+			%td.currency
+				= number_to_currency( expense.value )
+				%div{:class => [expense.accrue? ? 'icon-ok' : 'icon-remove']}
+			%td
+				= link_to( expense_path( expense ), :confirm => 'Are you sure?', :method => :delete, :class => 'btn  btn-danger btn-small') do
+					%i.icon-trash
+					Delete
+			:javascript
+				$('##{expense.class}_#{expense.id}').popover({content: '#{expense.description}', title: '#{expense.title}'});
+	%tr
+		%th Total
+		%th
+		%th
+		%th.currency
+			= number_to_currency( @supplier.expenses.sum(:value) )
+			%i.icon-globe
+		%th
 
-= link_to 'Edit', edit_supplier_path(@supplier) 
-|
-= link_to 'Back', suppliers_path
+=link_to url_for(:back), :class => 'btn btn-large' do 
+	%i.icon-arrow-left
+	Back

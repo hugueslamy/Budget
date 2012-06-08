@@ -54,18 +54,19 @@
 	- @account.expenses.order("effective_date asc").each do |expense|
 		%tr
 			%td
-				= link_to edit_expense_path( expense ), :class => 'btn  btn-action btn-mini' do
+				= link_to edit_expense_path( expense ), :class => 'btn  btn-action btn-small' do
 					%i.icon-edit
 					Edit
 			%td= expense.effective_date
 			%td{ :id => [expense.class, expense.id] }= truncate( expense.try( :title ) )
-			%td= expense.try( :supplier ).try( :name )
+			%td
+				- unless expense.supplier.nil?
+					= link_to expense.supplier.name, supplier_path( expense.supplier )
 			%td.currency
 				= number_to_currency( expense.value )
 				%div{:class => [expense.accrue? ? 'icon-ok' : 'icon-remove']}
-				
 			%td
-				= link_to( expense_path( expense ), :confirm => 'Are you sure?', :method => :delete, :class => 'btn  btn-danger btn-mini') do
+				= link_to( expense_path( expense ), :confirm => 'Are you sure?', :method => :delete, :class => 'btn  btn-danger btn-small') do
 					%i.icon-trash
 					Delete
 			:javascript
@@ -83,6 +84,6 @@
 	
 = render( :partial => 'progression_graph', :locals =>{ :account => @account })
 
-= link_to project_path( @account.project ), :class => 'btn btn-large' do
+=link_to url_for(:back), :class => 'btn btn-large' do 
 	%i.icon-arrow-left
 	Back
