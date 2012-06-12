@@ -25,7 +25,7 @@
 		%th Spent
 		%th Projected
 		%th Ratio
-		%th.actions Actions
+		%th.span4 Actions
 	- @project.accounts.each do |account|
 		%tr
 			%th= link_to account.name, account_path( account )
@@ -34,10 +34,10 @@
 			%td.currency= number_to_currency(account.expenses.projected.sum(:value))
 			%td.percent= number_to_percentage( account.allocations.sum(:value) == 0 ? 0 : account.expenses.sum(:value) / account.allocations.sum(:value) * 100, :precision => 1 )
 			%td
-				= link_to new_allocation_path( :account_id => account.id ), :class => "btn btn-small span2" do
+				= link_to new_allocation_path( :account_id => account.id ), :class => "btn btn-small span4" do
 					Add&nbsp;allocation
 					%i.icon-plus
-				= link_to new_expense_path( :account_id => account.id ), :class => "btn btn-small span2" do
+				= link_to new_expense_path( :account_id => account.id ), :class => "btn btn-small span4" do
 					Record&nbsp;expense
 					%i.icon-plus
 	%tr

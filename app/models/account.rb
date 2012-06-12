@@ -6,4 +6,5 @@ class Account < ActiveRecord::Base
 	has_many :expenses
 	
 	validates_associated :project
+	validates_presence_of :project
 end

@@ -1,8 +1,6 @@
 %p#notice= notice
 
-%p
-	%b Name:
-	= @supplier.name
+%h1= @supplier.name
 	
 %h2 Expenses
 %table.table
@@ -10,7 +8,7 @@
 		%th.edit_button
 		%th.span1 Date
 		%th Summary
-		%th.span2 Value (accrue?)
+		%th.span5 Value (accrue?)
 		%th.delete_button Actions
 	- @supplier.expenses.order("effective_date asc").each do |expense|		
 		%tr
@@ -37,6 +35,9 @@
 			= number_to_currency( @supplier.expenses.sum(:value) )
 			%i.icon-globe
 		%th
+	
+%b.graph_title Progression
+= (supplier_progression( @supplier )).html_safe
 
 =link_to url_for(:back), :class => 'btn btn-large' do 
 	%i.icon-arrow-left

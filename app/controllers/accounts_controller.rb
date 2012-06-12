@@ -2,7 +2,7 @@ class AccountsController < ApplicationController
   # GET /accounts
   # GET /accounts.json
   def index
-    @accounts = Account.all
+    @accounts = Account.order("project_id asc").all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -25,7 +25,7 @@ class AccountsController < ApplicationController
   # GET /accounts/new.json
   def new
     @account = Account.new
-		@account.project = Project.find params[:project]
+		@account.project = Project.find params[:project] unless params[:project].nil?
 
     respond_to do |format|
       format.html # new.html.erb
