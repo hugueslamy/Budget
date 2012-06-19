@@ -1,4 +1,6 @@
-%b.graph_title Allocations
-= (show_allocation_pie_chart( project )).html_safe
-%b.graph_title Expenses
-= (show_expenses_pie_chart( project )).html_safe
+.span11
+	%h4 Allocations
+	= (show_allocation_pie_chart( project )).html_safe
+.span11
+	%h4 Expenses
+	= (show_expenses_pie_chart( project )).html_safe

@@ -84,6 +84,6 @@
 	
 = render( :partial => 'progression_graph', :locals =>{ :account => @account })
 
-=link_to url_for(:back), :class => 'btn btn-large' do 
+=link_to @account.project, :class => 'btn btn-large' do 
 	%i.icon-arrow-left
 	Back
